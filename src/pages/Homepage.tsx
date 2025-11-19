@@ -13,9 +13,10 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
         backgroundImage: `url(${bgImage})`,
       }}
     >
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-black/600 z-0"></div>
+      {/* FIXED DARK OVERLAY */}
+      <div className="absolute inset-0 bg-black/70 z-0"></div>
 
+      {/* MAIN CONTENT */}
       <div className="relative z-10">
         <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -68,14 +69,17 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
             </div>
 
             <div className="text-center mb-16 relative" style={{ marginTop: '100px', marginLeft: '-50px' }}>
-              <h1 className="text-6xl font-bold mb-4 transform -rotate-2" style={{ fontFamily: 'Courier New, monospace' }}>
+              <h1
+                className="text-6xl font-bold mb-4 transform -rotate-2"
+                style={{ fontFamily: 'Courier New, monospace' }}
+              >
                 PROVE YER<br />BRILLIANCE
               </h1>
               <p className="text-xl mb-2 transform rotate-1" style={{ fontFamily: 'Georgia, serif' }}>
                 (Or attempt to, ye brave fool)
               </p>
               <div className="inline-block px-2 py-1 text-xs text-cyan-400 border border-cyan-400 transform rotate-2">
-                ⚠ CAPTAIN JACK SPARROW
+                CAPTAIN JACK SPARROW
               </div>
             </div>
 
