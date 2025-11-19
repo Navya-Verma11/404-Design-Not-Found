@@ -1,23 +1,44 @@
 import { useState } from 'react';
-import Homepage from './pages/Homepage';
-import About from './pages/About';
-import Registration from './pages/Registration';
-import Verification from './pages/Verification';
-import Dashboard from './pages/Dashboard';
-import NotFound from './pages/NotFound';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import RegistrationPage from './pages/RegistrationPage';
+import VerificationPage from './pages/VerificationPage';
+import DashboardPage from './pages/DashboardPage';
+import ReminderPage from './pages/ReminderPage';
+import NotFoundPage from './pages/NotFoundPage';
+import ReadmePage from './pages/ReadmePage';
+import PirateAnimation from './components/PirateAnimation';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'home':
+        return <HomePage onNavigate={setCurrentPage} />;
+      case 'about':
+        return <AboutPage onNavigate={setCurrentPage} />;
+      case 'registration':
+        return <RegistrationPage onNavigate={setCurrentPage} />;
+      case 'verification':
+        return <VerificationPage onNavigate={setCurrentPage} />;
+      case 'dashboard':
+        return <DashboardPage onNavigate={setCurrentPage} />;
+      case 'reminder':
+        return <ReminderPage onNavigate={setCurrentPage} />;
+      case 'readme':
+        return <ReadmePage onNavigate={setCurrentPage} />;
+      case '404':
+        return <NotFoundPage onNavigate={setCurrentPage} />;
+      default:
+        return <NotFoundPage onNavigate={setCurrentPage} />;
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-white text-black">
-      {currentPage === 'home' && <Homepage onNavigate={setCurrentPage} />}
-      {currentPage === 'about' && <About onNavigate={setCurrentPage} />}
-      {currentPage === 'register' && <Registration onNavigate={setCurrentPage} onRegister={() => setIsLoggedIn(true)} />}
-      {currentPage === 'verify' && <Verification onNavigate={setCurrentPage} onVerify={() => { setIsLoggedIn(true); setCurrentPage('dashboard'); }} />}
-      {currentPage === 'dashboard' && <Dashboard onNavigate={setCurrentPage} isLoggedIn={isLoggedIn} />}
-      {currentPage === '404' && <NotFound onNavigate={setCurrentPage} />}
+    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+      <PirateAnimation />
+      {renderPage()}
     </div>
   );
 }
