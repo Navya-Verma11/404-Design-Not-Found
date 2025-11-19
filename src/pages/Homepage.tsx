@@ -14,7 +14,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
       }}
     >
       {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-black/80 z-0"></div>
+      <div className="absolute inset-0 bg-black/140 z-0"></div>
 
       <div className="relative z-10">
         <div className="absolute inset-0 opacity-10">
