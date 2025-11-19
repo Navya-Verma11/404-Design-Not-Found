@@ -65,7 +65,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
               (Or attempt to, ye brave fool)
             </p>
             <div className="inline-block px-2 py-1 text-xs text-cyan-400 border border-cyan-400 transform rotate-2">
-              ⚠ This might be the wrong page
+              ⚠ CAPTAIN JACK SPARROW
             </div>
           </div>
 
